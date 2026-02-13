@@ -1,7 +1,7 @@
-# Thesis Repository Template
+## Generated types for [google/type](https://github.com/googleapis/googleapis/tree/master/google/type).
 
-## Usage
+### Installation
 
-1. Create a new repository using this template.
-2. Clone it.
-3. Run `make` to scaffold the project.
+```shell
+composer require thesis/google-types
+```

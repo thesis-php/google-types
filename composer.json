@@ -1,0 +1,35 @@
+{
+    "name": "thesis/google-types",
+    "description": "Generated types for google/type.",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "kafkiansky",
+            "email": "vadimzanfir@gmail.com"
+        },
+        {
+            "name": "Valentin Udaltsov",
+            "email": "udaltsov.valentin@gmail.com"
+        },
+        {
+            "name": "Thesis Team",
+            "homepage": "https://github.com/orgs/thesis-php/people"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-bcmath": "*",
+        "thesis/protobuf": "^0.1.1",
+        "thesis/protobuf-known-types": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Google\\Type\\": "src/"
+        }
+    },
+    "config": {
+        "lock": false,
+        "sort-packages": true
+    }
+}
