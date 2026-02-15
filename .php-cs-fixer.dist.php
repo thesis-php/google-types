@@ -22,6 +22,7 @@ new PhpCsFixerCodingStandard()->applyTo($config, [
     'fully_qualified_strict_types' => false,
     'phpdoc_annotation_without_dot' => false,
     'phpdoc_summary' => false,
+    'global_namespace_import' => false,
 ]);
 
 return $config;
