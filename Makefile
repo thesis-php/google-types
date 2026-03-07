@@ -126,8 +126,14 @@ check: fixer-check rector-check composer-validate composer-normalize-check deps-
 .PHONY: check
 
 compile: ## Compile google/type types
-	protoc -I./third_party/googleapis \
-	    --plugin=protoc-gen-custom-plugin=/usr/local/bin/protoc-gen-php \
+	$(DOCKER) run --rm \
+		--pull always \
+        --user 1000:1000 \
+        -v $(PWD):/workspace \
+        -w /workspace \
+        ghcr.io/thesis-php/protoc-plugin:latest \
+        -I./third_party/googleapis \
+        --php-plugin_out=src_path=.:src \
 	    google/type/calendar_period.proto \
 	    google/type/color.proto \
 	    google/type/date.proto \
@@ -144,8 +150,7 @@ compile: ## Compile google/type types
 	    google/type/phone_number.proto \
 	    google/type/postal_address.proto \
 	    google/type/quaternion.proto \
-	    google/type/timeofday.proto \
-	    --custom-plugin_out=src_path=.:src
+	    google/type/timeofday.proto
 .PHONY: compile
 
 # -----------------------
